@@ -108,7 +108,7 @@ const ServiceCore = ({passwords, setPasswords, onClose}: IServiceCore) => {
             }, 2000);
 
         } else {
-            setActionStatusText('Отказ');
+            setActionStatusText('Отказ, попробуйте еще раз');
             setActionColor('red');
         }
     }
