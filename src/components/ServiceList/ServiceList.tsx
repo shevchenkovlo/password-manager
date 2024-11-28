@@ -18,7 +18,7 @@ const ServiceList = (props: IServiceListProps) => {
         setSearch(e.target.value);
     }
 
-    const filteredService: IServiceItem[] = service.filter((service: IServiceItem) => {
+    const filteredService: IServiceItem[] = service?.filter((service: IServiceItem) => {
         return service.serviceName.toLowerCase().includes(search.toLowerCase());
     })
 
@@ -27,7 +27,7 @@ const ServiceList = (props: IServiceListProps) => {
             <h2 className='title'>Список сервисов</h2>
             <TextField id="standard-basic" label="Поиск сервиса..." variant="standard" onChange={handleSearch} />
             <div className='service-list'>
-                {filteredService.map((service: IServiceItem, index: number) => (
+                {filteredService && filteredService.map((service: IServiceItem, index: number) => (
                     <ServiceCard key={index} serviceName={service.serviceName} password={service.password} index={index} handleDelete={handleDelete}></ServiceCard>
                 ))}
             </div>

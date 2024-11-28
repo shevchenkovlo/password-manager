@@ -97,7 +97,7 @@ const ServiceCore = ({passwords, setPasswords, onClose}: IServiceCore) => {
                 password,
             };
 
-            const newPasswords: IServiceItem[] = [...passwords, newPassword];
+            const newPasswords: IServiceItem[] = passwords ? [...passwords, newPassword] : [newPassword];
             setPasswords(newPasswords);
             localStorage.setItem('passwords', JSON.stringify(newPasswords));
 

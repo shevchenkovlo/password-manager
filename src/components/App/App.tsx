@@ -27,7 +27,13 @@ function App() {
     }
 
     useEffect(() => {
-        const storedPasswords = JSON.parse(localStorage.getItem('passwords') ?? '') || [];
+
+        let storedPasswords
+        if(localStorage["passwords"]){
+            // @ts-ignore
+            storedPasswords = JSON.parse(localStorage.getItem('passwords') || '[]') ;
+        }
+
         setPasswords(storedPasswords);
     }, []);
 
