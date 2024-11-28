@@ -1,0 +1,18 @@
+.card {
+    border: solid 1px #1976d2;
+    margin: 15px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.card-name {
+    font-size: 16px;
+}
+
+.button-delete {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
